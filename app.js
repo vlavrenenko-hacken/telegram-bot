@@ -1,10 +1,9 @@
 const TelegramBot = require('node-telegram-bot-api')
-const dotenv = require('dotenv')
 const getData = require('./test.js')
 
-dotenv.config({path:'./config/config.env'})
+const TOKEN = '1984159588:AAGpgJhOWa_LktPZKUpczBWGrwO8dqaN_L0'
 
-const bot = new TelegramBot(process.env.TOKEN, {
+const bot = new TelegramBot(TOKEN, {
     polling:{
         interval: 300,
         autoStart:true,
