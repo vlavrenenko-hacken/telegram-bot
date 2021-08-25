@@ -17,7 +17,7 @@ async function getData(word) {
         if(i>3){
             break
         }
-        wres = !wres?$(dictionaries[i]).find('.headword.hdb.tw-bw.dhw.dpos-h_hw').first().text():''
+        wres = !wres?$(dictionaries[i]).find('.headword.tw-bw.dhw.dpos-h_hw').first().text():''
         let p_us = $(dictionaries[i]).find('.us.dpron-i')
         let p_uk = $(dictionaries[i]).find('.uk.dpron-i')
         p_usf = !p_usf?$(p_us).find('.ipa.dipa.lpr-2.lpl-1').first().text().split('\n').join('').replace(/\s+/g,' '):''
