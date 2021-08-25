@@ -14,6 +14,9 @@ async function getData(word) {
     const dictionaries = $('.pr.dictionary')
     var p_usf, p_ukf, wres;
     for(let i = 0;i<dictionaries.length;i++){
+        if(i>3){
+            break
+        }
         wres = !wres?$(dictionaries[i]).find('.headword.hdb.tw-bw.dhw.dpos-h_hw').first().text():''
         let p_us = $(dictionaries[i]).find('.us.dpron-i')
         let p_uk = $(dictionaries[i]).find('.uk.dpron-i')
