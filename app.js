@@ -35,13 +35,6 @@ bot.on('inline_query', query=>{
 })
 
 
-
-
-
-
-
-
-
 function deleteSpaces(word){
     return word? word.trim():''
 }
@@ -93,7 +86,6 @@ function sendInlineCard(chatId, word){
                 message_text:response,
                 parse_mode:'HTML'
             }
-
         }]
 
         bot.answerInlineQuery(chatId, message, {
