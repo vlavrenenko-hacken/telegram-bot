@@ -7,9 +7,13 @@ async function getData(word) {
     if(!word||(word.length <=2)){
         return {}
     }
+    const headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
+    };
+
     const URL = `https://dictionary.cambridge.org/us/dictionary/english/${word}`
     let arr={}
-    const {data} = await axios.get(URL)
+    const {data} = await axios.get(URL, {headers, timeout: 10000})
     const $ = cheerio.load(data)
     const dictionaries = $('.pr.dictionary')
     var p_usf, p_ukf, wres;
@@ -43,10 +47,8 @@ async function getData(word) {
             pron_uk:p_ukf,
             pairs:dictionary
         }
-    }
+        }    
     return arr
 }
 
 module.exports = getData
-
-
